@@ -1,3 +1,6 @@
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles0, function (sprite, location) {
+    game.over(true)
+})
 function startGame () {
     scene.setBackgroundImage(img`
         ................................................................................................................................................................
@@ -141,13 +144,10 @@ function startGame () {
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
     controller.moveSprite(mySprite)
-    tiles.placeOnRandomTile(mySprite, assets.tile`transparency16`)
+    tiles.placeOnRandomTile(mySprite, sprites.dungeon.hazardHole)
     scene.cameraFollowSprite(mySprite)
     info.startCountdown(10)
 }
-scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
-    game.over(true)
-})
 function startCountdown () {
     scene.setBackgroundImage(img`
         ................................................................................................................................................................
