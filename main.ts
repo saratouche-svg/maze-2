@@ -141,11 +141,11 @@ function startGame () {
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
     controller.moveSprite(mySprite)
-    tiles.placeOnRandomTile(mySprite, sprites.dungeon.floorLight2)
+    tiles.placeOnRandomTile(mySprite, assets.tile`transparency16`)
     scene.cameraFollowSprite(mySprite)
     info.startCountdown(10)
 }
-scene.onOverlapTile(SpriteKind.Player, sprites.castle.saplingPine, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
     game.over(true)
 })
 function startCountdown () {
